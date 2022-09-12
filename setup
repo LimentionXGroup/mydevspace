@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+
+
+echo "setup is starting..."
+apt update
+apt install -y curl git build-essential zsh 
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+chsh -s zsh
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /root/.zshrc
+source /root/.zshrc
+brew install neovim
+echo "setup is finished!"
